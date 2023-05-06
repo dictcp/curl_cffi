@@ -258,6 +258,7 @@ class BaseSession:
             elif url.startswith("https://"):
                 if proxies["https"] is not None:
                     c.setopt(CurlOpt.PROXY, proxies["https"])
+                    c.setopt(CurlOpt.PROXYUSERPWD, proxies["https-auth"]) # FIXME
                     # for http proxy, need to tell curl to enable tunneling
                     if not proxies["https"].startswith("socks"):
                         c.setopt(CurlOpt.HTTPPROXYTUNNEL, 1)
