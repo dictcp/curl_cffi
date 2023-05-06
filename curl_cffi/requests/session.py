@@ -389,6 +389,7 @@ class Session(BaseSession):
         allow_redirects: bool = True,
         max_redirects: Optional[int] = None,
         proxies: Optional[dict] = None,
+        stream: Optional[bool] = None, # FIXME
         verify: Optional[bool] = None,
         referer: Optional[str] = None,
         accept_encoding: Optional[str] = "gzip, deflate, br",

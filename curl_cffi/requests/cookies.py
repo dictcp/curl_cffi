@@ -53,6 +53,9 @@ class Response:
     def json(self, **kw):
         return loads(self.content, **kw)
 
+    def iter_lines(self):  # FIXME
+        return self.content.split(b"\n")
+
     def close(self):
         warnings.warn("Deprecated, use Session.close")
 
